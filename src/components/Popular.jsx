@@ -3,10 +3,11 @@ import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import { Link } from "react-router-dom";
+import { API_KEY } from "../api/api";
 
 const Popular = () => {
   const NUMBER_OF_RECIPE = 5;
-  const API_KEY = "2c42a08d45f64a3a8fc6e5878cafd704";
+//   const API_KEY = "2c42a08d45f64a3a8fc6e5878cafd704";
 
   useEffect(() => {
     console.log(process.env.REACT_APP_API_KEY);

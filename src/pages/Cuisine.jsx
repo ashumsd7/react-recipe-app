@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
+import { API_KEY } from "../api/api";
+import { Link } from "react-router-dom";
 
 function Cuisine() {
-  const API_KEY = "2c42a08d45f64a3a8fc6e5878cafd704";
+  //   const API_KEY = "2c42a08d45f64a3a8fc6e5878cafd704";
 
   let params = useParams();
   const [cuisine, setCuisine] = useState([]);
@@ -25,8 +27,10 @@ function Cuisine() {
       {cuisine.map((item) => {
         return (
           <Card key={item.id}>
-            <img src={item.image} alt={item.id}></img>
-            <h4>{item.title}</h4>
+            <Link to={"/recipe/" + item.id}>
+              <img src={item.image} alt={item.id}></img>
+              <h4>{item.title}</h4>
+            </Link>
           </Card>
         );
       })}
