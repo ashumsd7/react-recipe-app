@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { API_KEY } from "../api/api";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Cuisine() {
   //   const API_KEY = "2c42a08d45f64a3a8fc6e5878cafd704";
@@ -23,7 +24,12 @@ function Cuisine() {
     setCuisine(recipes.results);
   };
   return (
-    <Grid>
+    <Grid
+     animate={{opacity:1}}
+     initial= {{ opacity:0}}
+     exit= {{ opacity:0}}
+     transition= {{duration:0.5}}
+    >
       {cuisine.map((item) => {
         return (
           <Card key={item.id}>
@@ -52,7 +58,7 @@ function Cuisine() {
   );
 }
 
-const Grid = styled.div`
+const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   grid-gap: 3rem;
