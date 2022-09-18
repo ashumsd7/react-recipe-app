@@ -1,5 +1,10 @@
 // import {  FaHamburger } from "react-icons/fi";
-import { GiNoodles, GiChopsticks,GiPizzaSlice,GiHamburger } from "react-icons/gi";
+import {
+  GiNoodles,
+  GiChopsticks,
+  GiPizzaSlice,
+  GiHamburger,
+} from "react-icons/gi";
 import styled from "styled-components";
 
 // import { NavLink } from "react-router-dom";
@@ -8,7 +13,7 @@ import React from "react";
 
 function Category() {
   return (
-    <div>
+    <List>
       <div>
         {" "}
         <GiPizzaSlice /> <h4>Italian</h4>
@@ -25,8 +30,14 @@ function Category() {
         {" "}
         <GiChopsticks /> <h4>Japanese</h4>
       </div>
-    </div>
+    </List>
   );
 }
+
+const List = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0rem;
+`;
 
 export default Category;
