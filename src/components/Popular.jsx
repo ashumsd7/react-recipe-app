@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
+import { Link } from "react-router-dom";
 
 const Popular = () => {
   const NUMBER_OF_RECIPE = 5;
-  const API_KEY = "4092cf00257a40e295e69ce5bcd67703";
+  const API_KEY = "2c42a08d45f64a3a8fc6e5878cafd704";
 
   useEffect(() => {
     console.log(process.env.REACT_APP_API_KEY);
@@ -46,9 +47,11 @@ const Popular = () => {
             return (
               <SplideSlide key={recipe.id}>
                 <Card>
-                  <p>{recipe.title}</p>
-                  <img src={recipe.image} alt={recipe.title} />
-                  <Gradient />
+                  <Link to={"/recipe/"+ recipe.id}>
+                    <p>{recipe.title}</p>
+                    <img src={recipe.image} alt={recipe.title} />
+                    <Gradient />
+                  </Link>
                 </Card>
               </SplideSlide>
             );

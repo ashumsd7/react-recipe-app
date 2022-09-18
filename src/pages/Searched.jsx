@@ -39,8 +39,11 @@ function Searched() {
             className="mt-4"
             src="https://media.istockphoto.com/vectors/cute-upset-fallen-ice-cream-404-vector-icon-concept-vector-id914875708?b=1&k=20&m=914875708&s=612x612&w=0&h=r7cXMvHUHG40tcCXqSfi5xA72C_UmNSACrNkzfgyrjo="
           />
-          <h4>  I think there is no food available with this `{params.search}` </h4>
-          <h4>Please try something else.</h4>
+          <h4>
+            {" "}
+            I think there is no food available with this `{params.search}`{" "}
+          </h4>
+          <h4>Please try something elIse.</h4>
         </Card>
       )}
     </Grid>
