@@ -31,6 +31,14 @@ function Cuisine() {
           </Card>
         );
       })}
+
+      {cuisine.length === 0 && (
+        <Card>
+          <img height='300' width='100' className="mt-4" src="https://img.freepik.com/premium-vector/little-girl-feel-hungry_10045-208.jpg?w=2000" />
+          <h4> No {params.type} Cuisine Available.</h4>
+          <h4>Please try after some time.</h4>
+        </Card>
+      )}
     </Grid>
   );
 }
@@ -45,6 +53,7 @@ const Card = styled.div`
   img {
     width: 100%;
     border-radius: 2rem;
+    object-fit: contain;
   }
 
   a {
