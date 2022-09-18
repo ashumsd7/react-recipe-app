@@ -20,9 +20,14 @@ const Popular = () => {
       `https://api.spoonacular.com/recipes/random?apiKey=${API_KEY}&number=${NUMBER_OF_RECIPE}`
     );
 
-    const data = await api.json();
-
-    setPopular(data.recipes);
+    const check = localStorage.getItem("popular");
+    if (check) {
+      setPopular(JSON.parse(check));
+    } else {
+      const data = await api.json();
+      localStorage.setItem('popular',JSON.stringify(data.recipes));
+      setPopular(data.recipes);
+    }
   };
   return (
     <div>
@@ -40,11 +45,11 @@ const Popular = () => {
         >
           {popular.map((recipe) => {
             return (
-              <SplideSlide>
+              <SplideSlide key={recipe.id}>
                 <Card>
                   <p>{recipe.title}</p>
                   <img src={recipe.image} alt={recipe.title} />
-                  <Gradient/>
+                  <Gradient />
                 </Card>
               </SplideSlide>
             );
@@ -77,14 +82,14 @@ const Card = styled.div`
     position: absolute;
     z-index: 10;
     left: 50%;
-    bottom: 0%;
+    bottom: 10%;
     transform: translate(-50%, 50%);
     color: white;
-    text-alight: center;
+    text-align: center;
     font-weight: 700;
     font-size: 1rem;
-    width:100%;
-    text-shadow:4px 2px 6px gray;
+    width: 100%;
+    text-shadow: 4px 2px 6px gray;
     height: 40%;
     display: flex;
     justify-content: center;
@@ -92,14 +97,12 @@ const Card = styled.div`
   }
 `;
 
-
-const Gradient =  styled.div`
-
-z-index:3;
-position:absolute;
-width:100%;
-height:100%;
-background:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5))
-`
+const Gradient = styled.div`
+  z-index: 3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+`;
 
 export default Popular;
