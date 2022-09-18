@@ -25,13 +25,12 @@ const Popular = () => {
       setPopular(JSON.parse(check));
     } else {
       const data = await api.json();
-      localStorage.setItem('popular',JSON.stringify(data.recipes));
+      localStorage.setItem("popular", JSON.stringify(data.recipes));
       setPopular(data.recipes);
     }
   };
   return (
     <div>
-      return (
       <Wrapper>
         <h3>Popular Picks</h3>
         <Splide
@@ -40,7 +39,7 @@ const Popular = () => {
             arrows: false,
             pagination: false,
             drag: "free",
-            gap: "5rem",
+            gap: "2rem",
           }}
         >
           {popular.map((recipe) => {
@@ -65,7 +64,7 @@ const Wrapper = styled.div`
 `;
 
 const Card = styled.div`
-  min-height: 25rem;
+  min-height: 15rem;
   border-radius: 2rem;
   overflow: hidden;
   position: relative;
