@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Nav>
           <GiOpenedFoodCan/>
-          <Logo to={"/"}>Delicious</Logo>
+          <Logo to={"/"}>Search Food Vidhi</Logo>
         </Nav>
         <Search />
         <Category />
