@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function Cuisine() {
   const API_KEY = "2c42a08d45f64a3a8fc6e5878cafd704";
@@ -26,7 +25,7 @@ function Cuisine() {
       {cuisine.map((item) => {
         return (
           <Card key={item.id}>
-            <img src={item.image}></img>
+            <img src={item.image} alt={item.id}></img>
             <h4>{item.title}</h4>
           </Card>
         );
@@ -34,7 +33,13 @@ function Cuisine() {
 
       {cuisine.length === 0 && (
         <Card>
-          <img height='300' width='100' className="mt-4" src="https://img.freepik.com/premium-vector/little-girl-feel-hungry_10045-208.jpg?w=2000" />
+          <img
+            height="300"
+            width="100"
+            className="mt-4"
+            alt="no found image"
+            src="https://img.freepik.com/premium-vector/little-girl-feel-hungry_10045-208.jpg?w=2000"
+          />
           <h4> No {params.type} Cuisine Available.</h4>
           <h4>Please try after some time.</h4>
         </Card>
