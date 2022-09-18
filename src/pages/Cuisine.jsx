@@ -47,7 +47,7 @@ function Cuisine() {
             height="300"
             width="100"
             className="mt-4"
-            alt="no found image"
+            alt="nofoundimage"
             src="https://img.freepik.com/premium-vector/little-girl-feel-hungry_10045-208.jpg?w=2000"
           />
           <h4> No {params.type} Cuisine Available.</h4>

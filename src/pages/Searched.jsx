@@ -27,7 +27,7 @@ function Searched() {
         return (
           <Card key={item.id}>
             <Link to={"/recipe/" + item.id}>
-              <img src={item.image}></img>
+              <img src={item.image} alt={item.title}></img>
               <h4>{item.title}</h4>
             </Link>
           </Card>
@@ -39,6 +39,7 @@ function Searched() {
           <img
             height="300"
             width="100"
+            alt='photo'
             className="mt-4"
             src="https://media.istockphoto.com/vectors/cute-upset-fallen-ice-cream-404-vector-icon-concept-vector-id914875708?b=1&k=20&m=914875708&s=612x612&w=0&h=r7cXMvHUHG40tcCXqSfi5xA72C_UmNSACrNkzfgyrjo="
           />
